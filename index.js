@@ -1,3 +1,4 @@
+
 // object method example
 const dog = {
     name: "Rover",
@@ -58,3 +59,10 @@ cat.likesToEat("fish and chips");
 
 cat.likesToFight(penguin)
 console.log(cat.catMath(1, 2)) // 3meow
+
+cat.speech = function () {
+    console.log(`${this.name} can give very long speeches!`);
+}
+cat.speak = dog.speak; // add dog speak method to cat
+cat.speak(); // Terrence can speak!
+cat.speech();
