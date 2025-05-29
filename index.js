@@ -66,3 +66,65 @@ cat.speech = function () {
 cat.speak = dog.speak; // add dog speak method to cat
 cat.speak(); // Terrence can speak!
 cat.speech();
+
+
+let pizzaTable = {
+    cheap: ["cheese", "sauce", "bread"],
+    medium: ["pepperoni", "mushrooms", "onions"],
+    expensive: ["anchovies", "truffles", "caviar"],
+}
+
+let userTable = {
+    admin: {
+        username: "admin",
+        password: "admin123",
+        role: "administrator"
+    },
+    user: {
+        username: "user",
+        password: "user123",
+        role: "regular user"
+    },
+    editor: {
+        username: "editor",
+        password: "editor123",
+        role: "content editor"
+    },
+}
+
+function getDayName(dayNumber) {
+    if (dayNumber === 1) return "Monday";
+    if (dayNumber === 2) return "Tuesday";
+    if (dayNumber === 3) return "Wednesday";
+    if (dayNumber === 4) return "Thursday";
+    if (dayNumber === 5) return "Friday";
+    if (dayNumber === 6) return "Saturday";
+    if (dayNumber === 7) return "Sunday";
+    return "Invalid day number";
+}
+
+console.log(getDayName(1)); // Monday
+
+
+// traffic light states
+let states = {
+    green: ["yellow"],
+    yellow: ["red"],
+    red: ["green", "yellow"],
+    yield: ["red"]
+}
+
+let currentState = "green";
+
+function enterState(newState) {
+    let validTransitions = states[currentState]
+
+    if (validTransitions.includes(newState)) {
+        currentState = newState;
+        console.log(`the light is now ${currentState}`);
+    } else {
+        console.log(`Cannot transition from ${currentState} to ${newState}`);
+    }
+}
+
+enterState("red"); // the light is now yellow
